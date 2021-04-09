@@ -6,27 +6,25 @@ import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductDetailScreen from '../screens/shop/ProductDetailsScreen';
 import Colors from '../constants/Colors';
 
-const ProductsNavigator = createStackNavigator({
+const ProductsNavigator = createStackNavigator(
+  {
     ProductsOverview: ProductsOverviewScreen,
     ProductDetail: ProductDetailScreen
-}, {
+  },
+  {
     defaultNavigationOptions: {
-        headerStyle: {
-            backgroundColor: Platform.OS === 'android'
-                ? Colors.primary
-                : ''
-        },
-        headerTintColor: Platform.OS === 'android'
-            ? 'white'
-            : Colors.primary
-    },
-    headerTitleStyle: {
+      headerStyle: {
+        backgroundColor: Platform.OS === 'android' ? Colors.primary : ''
+      },
+      headerTitleStyle: {
         fontFamily: 'open-sans-bold'
-
-    },
-    headerBackTitleStyle: {
+      },
+      headerBackTitleStyle: {
         fontFamily: 'open-sans'
+      },
+      headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
     }
-});
+  }
+);
 
 export default createAppContainer(ProductsNavigator);
